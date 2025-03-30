@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Tabs } from "expo-router";
+import { Link } from "expo-router";
 import { MaterialIcons } from "@expo/vector-icons";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { Colors } from "../../constants/Colors";
@@ -18,8 +19,9 @@ const TabsLayout = () => {
         },
         headerTitle: () => (
           <Image
-            source={require("../../assets/header-logo.png")}
-            style={{ width: 120, height: 40 }}
+            source={require("../../assets/icons/header-logo.png")}
+            style={{ width: undefined, height: 120, aspectRatio: 1 }}
+            resizeMode="contain"
           />
         ),
         headerRight: () => (
@@ -27,16 +29,16 @@ const TabsLayout = () => {
             <TouchableOpacity>
               <MaterialIcons
                 name="notifications"
-                size={32}
+                size={34}
                 color={Colors.primary}
-                style={{ marginRight: 10 }}
+                style={{ marginRight: 16 }}
               />
               {notificationCount > 0 && (
                 <View
                   style={{
                     position: "absolute",
-                    right: 12,
-                    top: 2,
+                    right: 18,
+                    top: 3,
                     backgroundColor: "red",
                     borderRadius: 10,
                     width: 12,
@@ -53,24 +55,34 @@ const TabsLayout = () => {
                 </View>
               )}
             </TouchableOpacity>
-            <TouchableOpacity>
-              <MaterialIcons
-                name="app-registration"
-                size={32}
-                color={Colors.primary}
-                style={{ marginRight: 10 }}
-              />
-            </TouchableOpacity>
+            <Link href="/menu" asChild>
+              <TouchableOpacity>
+                <Image
+                  source={require("../../assets/icons/grid-add.png")}
+                  style={{ width: 30, height: 30, marginRight: 16 }}
+                  resizeMode="contain"
+                />
+              </TouchableOpacity>
+            </Link>
           </>
         ),
       }}
     >
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
           title: "Home",
-          tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="home" size={size} color={color} />
+          tabBarActiveTintColor: Colors.primary,
+          tabBarIcon: ({ size, focused }) => (
+            <Image
+              source={
+                focused
+                  ? require("../../assets/icons/tabs/home-active.png")
+                  : require("../../assets/icons/tabs/home.png")
+              }
+              style={{ width: size, height: size }}
+              resizeMode="contain"
+            />
           ),
         }}
       ></Tabs.Screen>
@@ -78,8 +90,17 @@ const TabsLayout = () => {
         name="daily-feeds/index"
         options={{
           title: "Daily Feeds",
-          tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="rss-feed" size={size} color={color} />
+          tabBarActiveTintColor: Colors.primary,
+          tabBarIcon: ({ size, focused }) => (
+            <Image
+              source={
+                focused
+                  ? require("../../assets/icons/tabs/daily-feeds-active.png")
+                  : require("../../assets/icons/tabs/daily-feeds.png")
+              }
+              style={{ width: size, height: size }}
+              resizeMode="contain"
+            />
           ),
         }}
       ></Tabs.Screen>
@@ -87,8 +108,17 @@ const TabsLayout = () => {
         name="shop-online/index"
         options={{
           title: "Shop Online",
-          tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="shopping-bag" size={size} color={color} />
+          tabBarActiveTintColor: Colors.primary,
+          tabBarIcon: ({ size, focused }) => (
+            <Image
+              source={
+                focused
+                  ? require("../../assets/icons/tabs/shop-online-active.png")
+                  : require("../../assets/icons/tabs/shop-online.png")
+              }
+              style={{ width: size, height: size }}
+              resizeMode="contain"
+            />
           ),
         }}
       ></Tabs.Screen>
@@ -96,8 +126,17 @@ const TabsLayout = () => {
         name="activities/index"
         options={{
           title: "Activities",
-          tabBarIcon: ({ color, size }) => (
-            <MaterialIcons name="directions-run" size={size} color={color} />
+          tabBarActiveTintColor: Colors.primary,
+          tabBarIcon: ({ size, focused }) => (
+            <Image
+              source={
+                focused
+                  ? require("../../assets/icons/tabs/activities-active.png")
+                  : require("../../assets/icons/tabs/activities.png")
+              }
+              style={{ width: size, height: size }}
+              resizeMode="contain"
+            />
           ),
         }}
       ></Tabs.Screen>

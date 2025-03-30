@@ -7,34 +7,57 @@ import {
   ScrollView,
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { Colors } from "../../constants/Colors";
-import { MaterialIcons, MaterialCommunityIcons } from "@expo/vector-icons";
+import { Colors } from "../../../constants/Colors";
 
 const HomePage = () => {
   /** Replace with actual data values */
   const firstName = "Ruru";
   const mainServices = [
-    { label: "Hospital Services", icon: "local-hospital" },
-    { label: "Online Prescription", icon: "medical-services" },
-    { label: "Therapy Services", icon: "psychology" },
-    { label: "Health Insurance", icon: "health-and-safety" },
+    {
+      label: "Hospital Services",
+      icon: require("../../../assets/icons/services/hospital-services.png"),
+    },
+    {
+      label: "Online Prescription",
+      icon: require("../../../assets/icons/services/online-prescription.png"),
+    },
+    {
+      label: "Therapy Services",
+      icon: require("../../../assets/icons/services/theraphy-services.png"),
+    },
+    {
+      label: "Health Insurance",
+      icon: require("../../../assets/icons/services/health-insurance.png"),
+    },
   ];
   const otherServices = [
-    { label: "Vet Clinic Services", icon: "dog" },
-    { label: "Dental Services", icon: "tooth" },
-    { label: "Aesthetic Services", icon: "face-man-shimmer" },
-    { label: "Laboratory Services", icon: "beaker" },
+    {
+      label: "Vet Clinic Services",
+      icon: require("../../../assets/icons/services/vet-clinic-services.png"),
+    },
+    {
+      label: "Dental Services",
+      icon: require("../../../assets/icons/services/dental-services.png"),
+    },
+    {
+      label: "Aesthetic Services",
+      icon: require("../../../assets/icons/services/aesthetic-services.png"),
+    },
+    {
+      label: "Laboratory Services",
+      icon: require("../../../assets/icons/services/laboratory-services.png"),
+    },
   ];
   const consultations = [
     {
       type: "Physical Consultation",
-      doctorName: "Dr. Alvi Arcnial",
+      doctorName: "Dr. Alvi Arcinal",
       specialty: "Heart Specialist",
       day: "SATURDAY",
       date: "October 12, 2024",
       time: "08:30 AM",
       timezone: "Standard PH Time",
-      doctorImage: require("../../assets/doctor.png"),
+      doctorImage: require("../../../assets/doctor.png"),
     },
     // {
     //   type: "Online Consultation",
@@ -74,11 +97,10 @@ const HomePage = () => {
         <View style={styles.mainServicesContainer}>
           {mainServices.map((service, index) => (
             <TouchableOpacity key={index} style={styles.serviceItem}>
-              <MaterialIcons
-                name={service.icon}
-                size={40}
-                color={Colors.primary}
+              <Image
+                source={service.icon}
                 style={styles.serviceIcon}
+                resizeMode="contain"
               />
               <Text style={styles.serviceLabel}>{service.label}</Text>
             </TouchableOpacity>
@@ -89,11 +111,10 @@ const HomePage = () => {
         <View style={styles.otherServicesContainer}>
           {otherServices.map((service, index) => (
             <TouchableOpacity key={index} style={styles.serviceItem}>
-              <MaterialCommunityIcons
-                name={service.icon}
-                size={40}
-                color={Colors.primary}
+              <Image
+                source={service.icon}
                 style={styles.serviceIcon}
+                resizeMode="contain"
               />
               <Text style={styles.serviceLabel}>{service.label}</Text>
             </TouchableOpacity>
@@ -106,10 +127,10 @@ const HomePage = () => {
             <Text style={styles.appointmentHeader}>Upcoming Appointment</Text>
             <TouchableOpacity style={styles.viewAllButton}>
               <Text style={styles.viewAllText}>View All</Text>
-              <MaterialIcons
-                name="arrow-forward"
-                size={16}
-                color={Colors.grey}
+              <Image
+                source={require("../../../assets/icons/arrow-forward.png")}
+                style={{width: 15, height: 15}}
+                resizeMode="contain"
               />
             </TouchableOpacity>
           </View>
@@ -133,11 +154,10 @@ const HomePage = () => {
               {/* Date & Time Row */}
               <View style={styles.cardBottom}>
                 <View style={styles.iconWithText}>
-                  <MaterialIcons
-                    name="calendar-today"
-                    size={30}
-                    color={Colors.white}
+                  <Image
+                    source={require("../../../assets/icons/calendar-today.png")}
                     style={styles.consultationIcon}
+                    resizeMode="contain"
                   />
                   <View style={styles.iconWithTextRight}>
                     <Text style={styles.dateTimeText}>{item.day}</Text>
@@ -145,11 +165,10 @@ const HomePage = () => {
                   </View>
                 </View>
                 <View style={styles.iconWithText}>
-                  <MaterialIcons
-                    name="access-time"
-                    size={30}
-                    color={Colors.white}
+                  <Image
+                    source={require("../../../assets/icons/access-time.png")}
                     style={styles.consultationIcon}
+                    resizeMode="contain"
                   />
                   <View style={styles.iconWithTextRight}>
                     <Text style={styles.dateTimeText}>{item.time}</Text>
@@ -241,7 +260,9 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   serviceIcon: {
-    marginBottom: 8,
+    width: 40,
+    height: 40,
+    marginBottom: 1,
   },
   serviceLabel: {
     fontSize: 12,
@@ -297,7 +318,7 @@ const styles = StyleSheet.create({
   cardTop: {
     flexDirection: "row",
     alignItems: "center",
-    paddingBottom: 10,
+    paddingVertical: 10,
   },
   doctorImage: {
     width: 40,
@@ -310,7 +331,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   doctorName: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: "bold",
     color: Colors.secondary,
     marginBottom: -2,
@@ -337,6 +358,8 @@ const styles = StyleSheet.create({
   },
   consultationIcon: {
     marginRight: 6,
+    width: 30,
+    height: 30,
   },
   dateTimeText: {
     color: Colors.white,
