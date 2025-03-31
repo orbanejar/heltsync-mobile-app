@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Tabs } from "expo-router";
 import { Link } from "expo-router";
-import { MaterialIcons } from "@expo/vector-icons";
-import { View, Text, Image, TouchableOpacity } from "react-native";
 import { Colors } from "../../constants/Colors";
+import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 
 const TabsLayout = () => {
   const [notificationCount, setNotificationCount] = useState(1);
@@ -12,44 +11,25 @@ const TabsLayout = () => {
     <Tabs
       screenOptions={{
         headerShown: true,
-        headerStyle: {
-          elevation: 0, // Remove shadow on Android
-          shadowOpacity: 0, // Remove shadow on iOS
-          borderBottomWidth: 0, // Remove border at the bottom
-        },
+        headerStyle: styles.headerStyle,
         headerTitle: () => (
           <Image
-            source={require("../../assets/icons/header-logo.png")}
-            style={{ width: undefined, height: 120, aspectRatio: 1 }}
+            source={require("../../assets/icons/header/long-logo.png")}
+            style={styles.headerLogo}
             resizeMode="contain"
           />
         ),
         headerRight: () => (
           <>
             <TouchableOpacity>
-              <MaterialIcons
-                name="notifications"
-                size={34}
-                color={Colors.primary}
-                style={{ marginRight: 16 }}
-              />
+              <Image
+                  source={require("../../assets/icons/header/bell.png")}
+                  style={styles.headerIcon}
+                  resizeMode="contain"
+                />
               {notificationCount > 0 && (
-                <View
-                  style={{
-                    position: "absolute",
-                    right: 18,
-                    top: 3,
-                    backgroundColor: "red",
-                    borderRadius: 10,
-                    width: 12,
-                    height: 12,
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  <Text
-                    style={{ color: "white", fontSize: 7, fontWeight: "bold" }}
-                  >
+                <View style={styles.notificationBadge}>
+                  <Text style={styles.notificationText}>
                     {notificationCount > 9 ? "9+" : notificationCount}
                   </Text>
                 </View>
@@ -58,8 +38,8 @@ const TabsLayout = () => {
             <Link href="/menu" asChild>
               <TouchableOpacity>
                 <Image
-                  source={require("../../assets/icons/grid-add.png")}
-                  style={{ width: 30, height: 30, marginRight: 16 }}
+                  source={require("../../assets/icons/header/grid-add.png")}
+                  style={styles.headerIcon}
                   resizeMode="contain"
                 />
               </TouchableOpacity>
@@ -143,5 +123,38 @@ const TabsLayout = () => {
     </Tabs>
   );
 };
+
+const styles = StyleSheet.create({
+  headerStyle: {
+    elevation: 0,
+    shadowOpacity: 0,
+    borderBottomWidth: 0,
+  },
+  headerLogo: {
+    width: undefined,
+    height: 120,
+    aspectRatio: 1,
+  },
+  headerIcon: {
+    width: 30,
+    height: 30,
+    marginRight: 16,
+  },
+  notificationBadge: {
+    position: "absolute",
+    right: 17,
+    top: 1,
+    borderRadius: 10,
+    width: 12,
+    height: 12,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  notificationText: {
+    color: "white",
+    fontSize: 7,
+    fontWeight: "bold",
+  },
+});
 
 export default TabsLayout;

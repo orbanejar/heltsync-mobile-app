@@ -7,7 +7,9 @@ import {
   Image,
   ScrollView,
 } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { Colors } from "../../constants/Colors";
+import Footer from "../../components/footer";
 
 const Menu = () => {
   const onlineShop = [
@@ -95,87 +97,126 @@ const Menu = () => {
     {
       id: 27,
       label: "Hospital & Services",
-        icon: require("../../assets/icons/menu/services/hospital-services.png"),
+      icon: require("../../assets/icons/menu/services/hospital-services.png"),
     },
     {
       id: 28,
       label: "Locator Buddy",
-        icon: require("../../assets/icons/menu/services/locator-buddy.png"),
+      icon: require("../../assets/icons/menu/services/locator-buddy.png"),
+    },
+  ];
+  const footerItems = [
+    {
+      label: "SOS Emergency",
+      link: "/",
+      icon: require("../../assets/icons/menu/footer/sos-emergency.png"),
+    },
+    {
+      label: "Partner Dashboard",
+      link: "/",
+      icon: require("../../assets/icons/menu/footer/partner-dashboard.png"),
+    },
+    {
+      label: "My Account Settings",
+      link: "/",
+      icon: require("../../assets/icons/menu/footer/account-settings.png"),
     },
   ];
 
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.contents}>
-        <Text style={styles.title}>Shop Online</Text>
-        <View style={styles.menuRow}>
-          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            {onlineShop.map((item) => (
-              <TouchableOpacity key={item.id} style={styles.menuItem}>
-                <View style={styles.iconContainer}>
-                  <Image source={item.icon} style={styles.icon} />
-                </View>
-                <Text style={styles.label} numberOfLines={2}>
-                  {item.label}
-                </Text>
-              </TouchableOpacity>
-            ))}
-          </ScrollView>
-          <View style={styles.floatingArrow}>
-            <Image
-              source={require("../../assets/icons/menu/shop/arrow-left.png")}
-              style={styles.floatingIcon}
-            />
-          </View>
-        </View>
-        <View style={styles.separator} />
-      </View>
-
-      <View style={styles.contents}>
-        <Text style={styles.title}>Health Records</Text>
-        <View style={styles.menuRow}>
-          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            {healthRecords.map((item) => (
-              <TouchableOpacity key={item.id} style={styles.menuItem}>
-                <View style={styles.iconContainer}>
-                  <Image source={item.icon} style={styles.icon} />
-                </View>
-                <Text style={styles.label} numberOfLines={2}>
-                  {item.label}
-                </Text>
-              </TouchableOpacity>
-            ))}
-          </ScrollView>
-        </View>
-        <View style={styles.separator} />
-      </View>
-
-      <View style={styles.services}>
-        <Text style={styles.title}>Services</Text>
-        <View style={styles.gridContainer}>
-          {services.map((service) => (
-            <TouchableOpacity key={service.id} style={styles.cardContainer}>
-              <View style={styles.card}>
-                <View style={styles.cardContent}>
-                  <View style={styles.leftSection}>
-                    <Text style={styles.servicesLabel}>{service.label}</Text>
-                  </View>
-                  <View style={styles.rightSection}>
-                    <Image source={service.icon} style={styles.servicesIcon} />
-                  </View>
-                </View>
+    <View style={{ flex: 1 }}>
+      <SafeAreaView>
+        <ScrollView contentContainerStyle={styles.container}>
+          <View style={styles.contents}>
+            <Text style={styles.title}>Shop Online</Text>
+            <View style={styles.menuRow}>
+              <ScrollView
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+              >
+                {onlineShop.map((item) => (
+                  <TouchableOpacity key={item.id} style={styles.menuItem}>
+                    <View style={styles.iconContainer}>
+                      <Image source={item.icon} style={styles.icon} />
+                    </View>
+                    <Text style={styles.label} numberOfLines={2}>
+                      {item.label}
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </ScrollView>
+              <View style={styles.floatingArrow}>
+                <Image
+                  source={require("../../assets/icons/menu/shop/arrow-left.png")}
+                  style={styles.floatingIcon}
+                />
               </View>
-            </TouchableOpacity>
-          ))}
-        </View>
-      </View>
-    </ScrollView>
+            </View>
+            <View style={styles.separator} />
+          </View>
+
+          <View style={styles.contents}>
+            <Text style={styles.title}>Health Records</Text>
+            <View style={styles.menuRow}>
+              <ScrollView
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+              >
+                {healthRecords.map((item) => (
+                  <TouchableOpacity key={item.id} style={styles.menuItem}>
+                    <View style={styles.iconContainer}>
+                      <Image source={item.icon} style={styles.icon} />
+                    </View>
+                    <Text style={styles.label} numberOfLines={2}>
+                      {item.label}
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </ScrollView>
+            </View>
+            <View style={styles.separator} />
+          </View>
+
+          <View style={styles.services}>
+            <Text style={styles.title}>Services</Text>
+            <View style={styles.gridContainer}>
+              {services.map((service) => (
+                <TouchableOpacity key={service.id} style={styles.cardContainer}>
+                  <View style={styles.card}>
+                    <View style={styles.cardContent}>
+                      <View style={styles.leftSection}>
+                        <Text style={styles.servicesLabel}>
+                          {service.label}
+                        </Text>
+                      </View>
+                      <View style={styles.rightSection}>
+                        <Image
+                          source={service.icon}
+                          style={styles.servicesIcon}
+                        />
+                      </View>
+                    </View>
+                  </View>
+                </TouchableOpacity>
+              ))}
+            </View>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+      <Footer items={footerItems} />
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    padding: 16,
+    flexGrow: 1,
+    marginTop: "auto",
+    paddingTop: 70,
+    paddingStart: 16,
+    paddingEnd: 16,
+    paddingBottom: 150,
+    backgroundColor: Colors.white,
   },
   contents: {
     paddingBottom: 20,
