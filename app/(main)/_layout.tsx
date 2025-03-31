@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Tabs } from "expo-router";
 import { Link } from "expo-router";
-import { Colors } from "../../constants/Colors";
+import { Colors, Icons } from "@/config";
 import { View, Text, Image, TouchableOpacity, StyleSheet } from "react-native";
 
 const TabsLayout = () => {
@@ -12,21 +12,22 @@ const TabsLayout = () => {
       screenOptions={{
         headerShown: true,
         headerStyle: styles.headerStyle,
+        headerTitleAlign: "left",
         headerTitle: () => (
           <Image
-            source={require("../../assets/icons/header/long-logo.png")}
+            source={Icons.longLogo}
             style={styles.headerLogo}
             resizeMode="contain"
           />
         ),
         headerRight: () => (
-          <>
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
             <TouchableOpacity>
               <Image
-                  source={require("../../assets/icons/header/bell.png")}
-                  style={styles.headerIcon}
-                  resizeMode="contain"
-                />
+                source={Icons.bell}
+                style={styles.headerIcon}
+                resizeMode="contain"
+              />
               {notificationCount > 0 && (
                 <View style={styles.notificationBadge}>
                   <Text style={styles.notificationText}>
@@ -38,28 +39,24 @@ const TabsLayout = () => {
             <Link href="/menu" asChild>
               <TouchableOpacity>
                 <Image
-                  source={require("../../assets/icons/header/grid-add.png")}
+                  source={Icons.gridAdd}
                   style={styles.headerIcon}
                   resizeMode="contain"
                 />
               </TouchableOpacity>
             </Link>
-          </>
+          </View>
         ),
       }}
     >
       <Tabs.Screen
-        name="home"
+        name="index"
         options={{
           title: "Home",
           tabBarActiveTintColor: Colors.primary,
           tabBarIcon: ({ size, focused }) => (
             <Image
-              source={
-                focused
-                  ? require("../../assets/icons/tabs/home-active.png")
-                  : require("../../assets/icons/tabs/home.png")
-              }
+              source={focused ? Icons.homeActiveTab : Icons.homeTab}
               style={{ width: size, height: size }}
               resizeMode="contain"
             />
@@ -73,11 +70,7 @@ const TabsLayout = () => {
           tabBarActiveTintColor: Colors.primary,
           tabBarIcon: ({ size, focused }) => (
             <Image
-              source={
-                focused
-                  ? require("../../assets/icons/tabs/daily-feeds-active.png")
-                  : require("../../assets/icons/tabs/daily-feeds.png")
-              }
+              source={focused ? Icons.dailyFeedsActiveTab : Icons.dailyFeedsTab}
               style={{ width: size, height: size }}
               resizeMode="contain"
             />
@@ -91,11 +84,7 @@ const TabsLayout = () => {
           tabBarActiveTintColor: Colors.primary,
           tabBarIcon: ({ size, focused }) => (
             <Image
-              source={
-                focused
-                  ? require("../../assets/icons/tabs/shop-online-active.png")
-                  : require("../../assets/icons/tabs/shop-online.png")
-              }
+              source={focused ? Icons.shopOnlineActiveTab : Icons.shopOnlineTab}
               style={{ width: size, height: size }}
               resizeMode="contain"
             />
@@ -109,11 +98,7 @@ const TabsLayout = () => {
           tabBarActiveTintColor: Colors.primary,
           tabBarIcon: ({ size, focused }) => (
             <Image
-              source={
-                focused
-                  ? require("../../assets/icons/tabs/activities-active.png")
-                  : require("../../assets/icons/tabs/activities.png")
-              }
+              source={focused ? Icons.activitiesActiveTab : Icons.activitiesTab}
               style={{ width: size, height: size }}
               resizeMode="contain"
             />

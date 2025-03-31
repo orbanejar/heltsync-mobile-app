@@ -1,21 +1,21 @@
 import { StatusBar } from "expo-status-bar";
 import { Text, View, StyleSheet } from "react-native";
-import { Colors } from "../../../constants/Colors";
+import { Colors } from "@/config";
 
-const ShopOnlinePage = () => {
+const ActivitiesPage = () => {
   return (
     <View>
       <StatusBar style="auto" />
       <View style={styles.greetingContainer}>
         <Text style={styles.greetingText}>
-          Shop Online
+          Activities
         </Text>
       </View>
     </View>
   );
 };
 
-export default ShopOnlinePage;
+export default ActivitiesPage;
 
 const styles = StyleSheet.create({
   greetingContainer: {

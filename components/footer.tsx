@@ -1,7 +1,7 @@
 import React from "react";
 import { useRouter } from "expo-router";
 import { View, Text, TouchableOpacity, Image, StyleSheet } from "react-native";
-import { Colors } from "../constants/Colors";
+import { Colors } from "@/config";
 
 interface FooterItem {
   label: string;

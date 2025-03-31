@@ -1,21 +1,21 @@
 import { StatusBar } from "expo-status-bar";
 import { Text, View, StyleSheet } from "react-native";
-import { Colors } from "../../../constants/Colors";
+import { Colors } from "@/config";
 
-const ActivitiesPage = () => {
+const DailyFeedsPage = () => {
   return (
     <View>
       <StatusBar style="auto" />
       <View style={styles.greetingContainer}>
         <Text style={styles.greetingText}>
-          Activities
+          Daily Feeds
         </Text>
       </View>
     </View>
   );
 };
 
-export default ActivitiesPage;
+export default DailyFeedsPage;
 
 const styles = StyleSheet.create({
   greetingContainer: {
