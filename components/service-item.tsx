@@ -1,17 +1,25 @@
 import React from "react";
 import { TouchableOpacity, Image, Text, StyleSheet } from "react-native";
+import { useRouter } from "expo-router";
 
 export type Service = {
   label: string;
   icon: any;
+  link: string;
 };
 
-const ServiceItem: React.FC<Service> = ({ label, icon }) => (
-  <TouchableOpacity style={styles.serviceItem}>
-    <Image source={icon} style={styles.serviceIcon} resizeMode="contain" />
-    <Text style={styles.serviceLabel}>{label}</Text>
-  </TouchableOpacity>
-);
+const ServiceItem: React.FC<Service> = ({ label, icon, link }) => {
+  const router = useRouter();
+  return (
+    <TouchableOpacity
+      style={styles.serviceItem}
+      onPress={() => router.push(link)}
+    >
+      <Image source={icon} style={styles.serviceIcon} resizeMode="contain" />
+      <Text style={styles.serviceLabel}>{label}</Text>
+    </TouchableOpacity>
+  );
+};
 
 const styles = StyleSheet.create({
   serviceItem: {

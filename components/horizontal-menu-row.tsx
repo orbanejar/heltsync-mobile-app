@@ -7,12 +7,14 @@ import {
   Image,
   ScrollView,
 } from "react-native";
+import { useRouter } from "expo-router";
 import { Colors, Icons } from "@/config";
 
 export type MenuItem = {
   id: number;
   label: string;
   icon: any;
+  link: string;
 };
 
 type HorizontalMenuRowProps = {
@@ -26,13 +28,18 @@ const HorizontalMenuRow: React.FC<HorizontalMenuRowProps> = ({
   items,
   showArrow = false,
 }) => {
+  const router = useRouter();
   return (
     <View style={styles.sectionContainer}>
       <Text style={styles.title}>{title}</Text>
       <View style={styles.menuRow}>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {items.map((item) => (
-            <TouchableOpacity key={item.id} style={styles.menuItem}>
+            <TouchableOpacity
+              key={item.id}
+              style={styles.menuItem}
+              onPress={() => router.push(item.link)}
+            >
               <View style={styles.iconContainer}>
                 <Image source={item.icon} style={styles.icon} />
               </View>
@@ -44,10 +51,7 @@ const HorizontalMenuRow: React.FC<HorizontalMenuRowProps> = ({
         </ScrollView>
         {showArrow && (
           <View style={styles.floatingArrow}>
-            <Image
-              source={Icons.arrowLeft}
-              style={styles.floatingIcon}
-            />
+            <Image source={Icons.arrowLeft} style={styles.floatingIcon} />
           </View>
         )}
       </View>

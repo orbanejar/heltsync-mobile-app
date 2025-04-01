@@ -7,7 +7,8 @@ import { Stack } from "expo-router";
 import { useNavigation } from "expo-router";
 import HeaderRight from "../components/header-right";
 import HeaderBackground from "../components/header-background-colored";
-import { StyleSheet } from "react-native";
+import { StyleSheet, TouchableOpacity, Image } from "react-native";
+import { Strings, Colors, Icons } from "@/config";
 
 const RootLayout = () => {
   const navigation = useNavigation();
@@ -20,7 +21,7 @@ const RootLayout = () => {
         name="menu/index"
         options={{
           headerShown: true,
-          headerTitle: "Menu",
+          headerTitle: Strings.navigation.menu,
           headerTitleStyle: styles.headerTitle,
           headerLeft: () => null,
           headerTitleAlign: "left",
@@ -35,6 +36,126 @@ const RootLayout = () => {
           ),
         }}
       />
+      <Stack.Screen
+        name="menu/services/book-appointment"
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: Strings.navigation.back,
+          headerTitleStyle: styles.backTitle,
+          headerLeft: () => (
+            <TouchableOpacity
+              onPress={() => navigation.goBack()}
+              style={styles.customBackButton}
+            >
+              <Image
+                source={Icons.backWithBorder}
+                style={styles.customBackIcon}
+              />
+            </TouchableOpacity>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="menu/services/vet-clinic"
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: Strings.navigation.back,
+          headerTitleStyle: styles.backTitle,
+          headerLeft: () => (
+            <TouchableOpacity
+              onPress={() => navigation.goBack()}
+              style={styles.customBackButton}
+            >
+              <Image
+                source={Icons.backWithBorder}
+                style={styles.customBackIcon}
+              />
+            </TouchableOpacity>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="menu/services/hospital-services"
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: Strings.navigation.back,
+          headerTitleStyle: styles.backTitle,
+          headerLeft: () => (
+            <TouchableOpacity
+              onPress={() => navigation.goBack()}
+              style={styles.customBackButton}
+            >
+              <Image
+                source={Icons.backWithBorder}
+                style={styles.customBackIcon}
+              />
+            </TouchableOpacity>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="menu/services/dental-clinic"
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: Strings.navigation.back,
+          headerTitleStyle: styles.backTitle,
+          headerLeft: () => (
+            <TouchableOpacity
+              onPress={() => navigation.goBack()}
+              style={styles.customBackButton}
+            >
+              <Image
+                source={Icons.backWithBorder}
+                style={styles.customBackIcon}
+              />
+            </TouchableOpacity>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="menu/services/laboratory-clinic"
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: Strings.navigation.back,
+          headerTitleStyle: styles.backTitle,
+          headerLeft: () => (
+            <TouchableOpacity
+              onPress={() => navigation.goBack()}
+              style={styles.customBackButton}
+            >
+              <Image
+                source={Icons.backWithBorder}
+                style={styles.customBackIcon}
+              />
+            </TouchableOpacity>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="menu/services/aesthetic-clinic"
+        options={{
+          headerShown: true,
+          headerShadowVisible: false,
+          headerTitle: Strings.navigation.back,
+          headerTitleStyle: styles.backTitle,
+          headerLeft: () => (
+            <TouchableOpacity
+              onPress={() => navigation.goBack()}
+              style={styles.customBackButton}
+            >
+              <Image
+                source={Icons.backWithBorder}
+                style={styles.customBackIcon}
+              />
+            </TouchableOpacity>
+          ),
+        }}
+      />
     </Stack>
   );
 };
@@ -46,5 +167,23 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
     color: "white",
+  },
+  backTitle: {
+    fontSize: 18,
+    fontWeight: "100",
+    color: Colors.grey,
+  },
+  backTitleStyle: {
+    elevation: 0,
+    shadowOpacity: 0,
+    borderBottomWidth: 0,
+  },
+  customBackButton: {
+    marginRight: 10,
+  },
+  customBackIcon: {
+    width: 24,
+    height: 24,
+    resizeMode: "contain",
   },
 });

@@ -1,7 +1,12 @@
 
 export const Strings = {
   general: {
-    viewAll: "View All"
+    viewAll: "View All",
+  },
+  navigation: {
+    menu: "Menu",
+    home: "Home",
+    back: "Back",
   },
   services: {
     hospital: "Hospital Services",
@@ -10,7 +15,9 @@ export const Strings = {
     healthInsurance: "Health Insurance",
     vetClinic: "Vet Clinic Services",
     dental: "Dental Services",
+    dentalClinic: "Dental Clinic Services",
     aesthetic: "Aesthetic Services",
+    aestheticClinic: "Aesthetic Clinic Services",
     laboratory: "Laboratory Services",
 
     bookAppointment: "Book Appointment",
@@ -18,8 +25,9 @@ export const Strings = {
     therapyServices: "Therapy Services",
     safezoneBuddy: "SafeZone Buddy",
     findSpecialist: "Find Specialist",
-    locatorHubby: "Locator Hubby"
-    
+    locatorHubby: "Locator Hubby",
+    virtualConsultation: "Virtual Consultation",
+
   },
   appointment: {
     header: "Upcoming Appointment",

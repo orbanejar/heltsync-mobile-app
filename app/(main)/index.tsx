@@ -16,36 +16,44 @@ import AppointmentCard, { Appointment } from "../../components/appointment-card"
 const servicesData = {
   main: [
     {
+      link: "/menu/services/hospital-services",
       label: Strings.services.hospital,
       icon: Icons.hospitalServicesHome,
     },
     {
+      link: "",
       label: Strings.services.onlinePrescription,
       icon: Icons.onlinePrescriptionHome,
     },
     {
+      link: "",
       label: Strings.services.theraphy,
       icon: Icons.therapyServicesHome,
     },
     {
+      link: "",
       label: Strings.services.healthInsurance,
       icon: Icons.healthInsuranceHome,
     },
   ],
   other: [
     {
+      link: "/menu/services/vet-clinic",
       label: Strings.services.vetClinic,
       icon: Icons.vetClinicServicesHome,
     },
     {
+      link: "/menu/services/dental-clinic",
       label: Strings.services.dental,
       icon: Icons.dentalServicesHome,
     },
     {
+      link: "/menu/services/aesthetic-clinic",
       label: Strings.services.aesthetic,
       icon: Icons.aestheticServicesHome,
     },
     {
+      link: "/menu/services/laboratory-clinic",
       label: Strings.services.laboratory,
       icon: Icons.labServicesHome,
     },

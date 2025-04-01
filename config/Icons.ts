@@ -1,4 +1,5 @@
 export const Icons = {
+    logo: require("../assets/icon.png"),
     // Header
     bell: require("../assets/icons/header/bell.png"),
     chat: require("../assets/icons/header/chat.png"),
@@ -40,6 +41,7 @@ export const Icons = {
     accessTime: require("../assets/icons/others/access-time.png"),
     arrowForward: require("../assets/icons/others/arrow-forward.png"),
     calendarToday: require("../assets/icons/others/calendar-today.png"),
+    backWithBorder: require("../assets/icons/others/back-with-border.png"),
   
     // Home - Services
     aestheticServicesHome: require("../assets/icons/services/aesthetic-services.png"),
@@ -60,5 +62,13 @@ export const Icons = {
     homeTab: require("../assets/icons/tabs/home.png"),
     shopOnlineActiveTab: require("../assets/icons/tabs/shop-online-active.png"),
     shopOnlineTab: require("../assets/icons/tabs/shop-online.png"),
+
+    // Appointments
+    virtualConsultation: require("../assets/icons/menu/appointments/virtual-consultation.png"),
+    hospitalServicesGray: require("../assets/icons/menu/appointments/hospital-services.png"),
+    vetClinicServicesGray: require("../assets/icons/menu/appointments/vet-clinic-services.png"),
+    dentalClinicServicesGray: require("../assets/icons/menu/appointments/dental-clinic-services.png"),
+    aestheticClinicServiesGray: require("../assets/icons/menu/appointments/aesthetic-clinic-services.png"),
+    laboratoryServicesGray: require("../assets/icons/menu/appointments/laboratory-services.png"),
   };
   

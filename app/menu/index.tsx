@@ -16,26 +16,31 @@ const Menu = () => {
   const onlineShop: MenuItem[] = [
     {
       id: 1,
+      link: "",
       label: Strings.shopOnline.medication,
       icon: Icons.medication,
     },
     {
       id: 2,
+      link: "",
       label: Strings.shopOnline.supplements,
       icon: Icons.supplements,
     },
     {
       id: 3,
+      link: "",
       label: Strings.shopOnline.vitamins,
       icon: Icons.vitamins,
     },
     {
       id: 4,
+      link: "",
       label: Strings.shopOnline.healthEssentials,
       icon: Icons.healthEssentials,
     },
     {
       id: 5,
+      link: "",
       label: Strings.shopOnline.wellnessProducts,
       icon: Icons.wellnessProducts,
     },
@@ -44,21 +49,25 @@ const Menu = () => {
   const healthRecords: MenuItem[] = [
     {
       id: 11,
+      link: "",
       label: Strings.healthRecords.pet,
       icon: Icons.petHealthRecords,
     },
     {
       id: 12,
+      link: "",
       label: Strings.healthRecords.myhealth,
       icon: Icons.myHealthRecords,
     },
     {
       id: 13,
+      link: "",
       label: Strings.healthRecords.family,
       icon: Icons.familyHealthRecords,
     },
     {
       id: 14,
+      link: "",
       label: Strings.healthRecords.employee,
       icon: Icons.employeeHealthRecords,
     },
@@ -67,41 +76,49 @@ const Menu = () => {
   const services: MenuItem[] = [
     {
       id: 21,
+      link: "/menu/services/book-appointment",
       label: Strings.services.bookAppointment,
       icon: Icons.bookAppointment,
     },
     {
       id: 22,
+      link: "",
       label: Strings.services.medicationPlanner,
       icon: Icons.medicationPlanner,
     },
     {
       id: 23,
+      link: "",
       label: Strings.services.theraphy,
       icon: Icons.therapyServices,
     },
     {
       id: 24,
+      link: "",
       label: Strings.services.safezoneBuddy,
       icon: Icons.safezoneBuddy,
     },
     {
       id: 25,
+      link: "",
       label: Strings.services.healthInsurance,
       icon: Icons.healthInsurance,
     },
     {
       id: 26,
+      link: "",
       label: Strings.services.findSpecialist,
       icon: Icons.findSpecialist,
     },
     {
       id: 27,
+      link: "",
       label: Strings.services.hospital,
       icon: Icons.hospitalServices,
     },
     {
       id: 28,
+      link: "",
       label: Strings.services.locatorHubby,
       icon: Icons.locatorBuddy,
     },

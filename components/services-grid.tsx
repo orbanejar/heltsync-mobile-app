@@ -1,12 +1,7 @@
 import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  Image,
-} from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { Colors } from "@/config";
+import { useRouter } from "expo-router";
 import { MenuItem } from "./horizontal-menu-row";
 
 type ServicesGridProps = {
@@ -14,12 +9,17 @@ type ServicesGridProps = {
 };
 
 const ServicesGrid: React.FC<ServicesGridProps> = ({ services }) => {
+  const router = useRouter();
   return (
     <View style={styles.servicesContainer}>
       <Text style={styles.title}>Services</Text>
       <View style={styles.gridContainer}>
         {services.map((service) => (
-          <TouchableOpacity key={service.id} style={styles.cardContainer}>
+          <TouchableOpacity
+            key={service.id}
+            style={styles.cardContainer}
+            onPress={() => router.push(service.link)}
+          >
             <View style={styles.card}>
               <View style={styles.cardContent}>
                 <View style={styles.leftSection}>
