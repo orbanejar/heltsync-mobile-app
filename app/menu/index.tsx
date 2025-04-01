@@ -3,7 +3,10 @@ import { View, ScrollView, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Colors, Strings, Icons } from "@/config";
 import Footer from "../../components/footer";
-import HorizontalMenuRow, { MenuItem } from "../../components/horizontal-menu-row";
+import { StatusBar } from "expo-status-bar";
+import HorizontalMenuRow, {
+  MenuItem,
+} from "../../components/horizontal-menu-row";
 import ServicesGrid from "../../components/services-grid";
 
 type FooterItem = {
@@ -144,6 +147,7 @@ const Menu = () => {
 
   return (
     <View style={{ flex: 1 }}>
+      <StatusBar style="auto" />
       <SafeAreaView>
         <ScrollView contentContainerStyle={styles.container}>
           <HorizontalMenuRow title="Shop Online" items={onlineShop} showArrow />

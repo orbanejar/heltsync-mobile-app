@@ -10,7 +10,9 @@ import {
 import { Colors, Strings, Icons } from "@/config";
 import { StatusBar } from "expo-status-bar";
 import ServiceSection from "../../components/service-section";
-import AppointmentCard, { Appointment } from "../../components/appointment-card";
+import AppointmentCard, {
+  Appointment,
+} from "../../components/appointment-card";
 
 // Data Arrays
 const servicesData = {
@@ -89,12 +91,15 @@ const HomePage = () => {
 
         {/* Ad Placeholder */}
         <View style={styles.adContainerRow}>
+          <Text style={{ color: Colors.grey, fontSize: 11, paddingBottom: 2 }}>
+            We've crafted exclusive deals just for you.
+          </Text>
           <View style={styles.adContainer}>
-            <View style={styles.adPlaceholder}>
-              <Text style={{ color: "#fff", fontWeight: "bold" }}>
-                Ad banner will be placed here.
-              </Text>
-            </View>
+            <Image
+              source={require("../../assets/sample-ad-banner.png")}
+              style={{ width: "100%", height: 150 }}
+              resizeMode="cover"
+            />
           </View>
         </View>
 
@@ -145,14 +150,15 @@ export default HomePage;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.white,
+    backgroundColor: Colors.aliceBlue,
   },
   greetingContainer: {
+    marginTop: -16,
     paddingHorizontal: 16,
     backgroundColor: Colors.white,
   },
   scrollViewContent: {
-    marginTop: 16,
+    paddingTop: 16,
     paddingBottom: 30,
     backgroundColor: Colors.aliceBlue,
   },
@@ -168,13 +174,6 @@ const styles = StyleSheet.create({
   adContainer: {
     borderRadius: 10,
     overflow: "hidden",
-  },
-  adPlaceholder: {
-    width: "100%",
-    height: 150,
-    backgroundColor: Colors.grey,
-    alignItems: "center",
-    justifyContent: "center",
   },
   appointmentContainer: {
     backgroundColor: Colors.white,

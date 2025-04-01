@@ -12,6 +12,9 @@ const TabsLayout = () => {
       screenOptions={{
         headerShown: true,
         headerStyle: styles.headerStyle,
+        tabBarStyle: styles.tabBarStyle,
+        tabBarLabelStyle: styles.tabBarLabelStyle, // Center the tab labels
+        tabBarIconStyle: styles.tabBarIconStyle, // Center the tab icons
         headerTitleAlign: "left",
         headerTitle: () => (
           <Image
@@ -62,7 +65,7 @@ const TabsLayout = () => {
             />
           ),
         }}
-      ></Tabs.Screen>
+      />
       <Tabs.Screen
         name="daily-feeds/index"
         options={{
@@ -76,7 +79,7 @@ const TabsLayout = () => {
             />
           ),
         }}
-      ></Tabs.Screen>
+      />
       <Tabs.Screen
         name="shop-online/index"
         options={{
@@ -90,7 +93,7 @@ const TabsLayout = () => {
             />
           ),
         }}
-      ></Tabs.Screen>
+      />
       <Tabs.Screen
         name="activities/index"
         options={{
@@ -104,7 +107,7 @@ const TabsLayout = () => {
             />
           ),
         }}
-      ></Tabs.Screen>
+      />
     </Tabs>
   );
 };
@@ -114,6 +117,20 @@ const styles = StyleSheet.create({
     elevation: 0,
     shadowOpacity: 0,
     borderBottomWidth: 0,
+  },
+  tabBarStyle: {
+    height: 70,
+    justifyContent: "center",
+    paddingTop: 5,
+    paddingBottom: 5,
+  },
+  tabBarLabelStyle: {
+    fontSize: 12,
+    fontWeight: "600",
+    textAlign: "center", // Center the label text
+  },
+  tabBarIconStyle: {
+    alignSelf: "center", // Center the icons horizontally
   },
   headerLogo: {
     width: undefined,
