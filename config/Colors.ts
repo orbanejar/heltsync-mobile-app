@@ -5,9 +5,14 @@ export const Colors = {
 
   white: "#ffffff",
   black: "#000000",
-  grey: "#808080",
-  lightGrey: "#f0f0f0",
-  darkGrey: "#404040",
+  gray: "#808080",
+  lightGray: "#f0f0f0",
+  darkGray: "#404040",
+
+  platinum: "#e9e9e9",
+  whiteSmoke: "#fbfbfb",
+  brightSkyBlue: "#1ac2ea",
+  silverGray: "#c8c8c8"
 } as const;
 
 export type ColorType = keyof typeof Colors;

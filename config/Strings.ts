@@ -8,6 +8,16 @@ export const Strings = {
     home: "Home",
     back: "Back",
   },
+  auth: {
+    username: "Username",
+    password: "Password",
+    signin: "Sign In",
+    forgotPassword: "Forgot Password",
+    createAccount: "Create Account",
+    createAccountMessage: "Don't have an account? Sign up now and unlock full access to all our services.",
+    allRightsReserved: "All Rights Reserved ©",
+    appVersion: "App ver",
+  },
   services: {
     hospital: "Hospital Services",
     onlinePrescription: "Online Prescription",
@@ -27,7 +37,6 @@ export const Strings = {
     findSpecialist: "Find Specialist",
     locatorHubby: "Locator Hubby",
     virtualConsultation: "Virtual Consultation",
-
   },
   appointment: {
     header: "Upcoming Appointment",

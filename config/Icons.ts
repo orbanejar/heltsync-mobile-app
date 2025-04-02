@@ -1,5 +1,6 @@
 export const Icons = {
-    logo: require("../assets/icon.png"),
+    logo: require("../assets/logo.png"),
+    logoWithTagline: require("../assets/logo-with-tagline.png"),
     // Header
     bell: require("../assets/icons/header/bell.png"),
     chat: require("../assets/icons/header/chat.png"),
@@ -42,6 +43,8 @@ export const Icons = {
     arrowForward: require("../assets/icons/others/arrow-forward.png"),
     calendarToday: require("../assets/icons/others/calendar-today.png"),
     backWithBorder: require("../assets/icons/others/back-with-border.png"),
+    person: require("../assets/icons/others/person.png"),
+    lock: require("../assets/icons/others/lock.png"),
   
     // Home - Services
     aestheticServicesHome: require("../assets/icons/services/aesthetic-services.png"),

@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   subTitle: {
     fontSize: 13,
     marginBottom: 16,
-    color: Colors.grey,
+    color: Colors.gray,
   },
   groupServicesTitle: {
     fontSize: 18,
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   groupServicesSubTitle: {
     fontSize: 13,
     marginBottom: 16,
-    color: Colors.grey,
+    color: Colors.gray,
   },
   separator: {
     height: 0.5,

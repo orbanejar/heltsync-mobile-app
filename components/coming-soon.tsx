@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 16,
-    color: Colors.grey,
+    color: Colors.gray,
     textAlign: "center",
     paddingHorizontal: 20,
   },

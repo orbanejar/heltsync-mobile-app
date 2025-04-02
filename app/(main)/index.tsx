@@ -91,7 +91,7 @@ const HomePage = () => {
 
         {/* Ad Placeholder */}
         <View style={styles.adContainerRow}>
-          <Text style={{ color: Colors.grey, fontSize: 11, paddingBottom: 2 }}>
+          <Text style={{ color: Colors.gray, fontSize: 11, paddingBottom: 2 }}>
             We've crafted exclusive deals just for you.
           </Text>
           <View style={styles.adContainer}>
@@ -196,13 +196,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     borderWidth: 1,
-    borderColor: Colors.lightGrey,
+    borderColor: Colors.lightGray,
     borderRadius: 20,
     paddingHorizontal: 12,
     paddingVertical: 4,
   },
   viewAllText: {
-    color: Colors.grey,
+    color: Colors.gray,
     fontSize: 12,
     marginRight: 4,
   },
@@ -210,18 +210,18 @@ const styles = StyleSheet.create({
     marginTop: 16,
   },
   reminderTitle: {
-    color: Colors.grey,
+    color: Colors.gray,
     fontWeight: "bold",
     fontSize: 13,
     marginBottom: 4,
   },
   reminderText: {
-    color: Colors.grey,
+    color: Colors.gray,
     fontSize: 10,
     lineHeight: 16,
   },
   linkText: {
-    color: Colors.grey,
+    color: Colors.gray,
     fontWeight: "bold",
     textDecorationLine: "underline",
   },

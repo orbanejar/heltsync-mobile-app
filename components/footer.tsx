@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     height: 140,
     backgroundColor: "#fff",
     borderTopWidth: 1,
-    borderTopColor: Colors.lightGrey,
+    borderTopColor: Colors.lightGray,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     margin: 16,
     padding: 10,
     borderRadius: 16,
-    backgroundColor: Colors.lightGrey,
+    backgroundColor: Colors.lightGray,
     width: "90%",
   },
   footerItem: {
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     height: 40,
   },
   label: {
-    color: Colors.darkGrey,
+    color: Colors.darkGray,
     fontSize: 13,
     marginTop: 5,
     textAlign: "center",

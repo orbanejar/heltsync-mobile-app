@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   button: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: Colors.lightGrey,
+    backgroundColor: Colors.lightGray,
     padding: 18,
     borderRadius: 8,
     marginTop: 16,
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 19,
-    color: Colors.secondary,
+    color: Colors.brightSkyBlue,
   },
 });
 

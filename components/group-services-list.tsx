@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   },
   serviceLabel: {
     fontSize: 17,
-    color: Colors.secondary,
+    color: Colors.brightSkyBlue,
   },
   arrowIcon: {
     width: 20,
