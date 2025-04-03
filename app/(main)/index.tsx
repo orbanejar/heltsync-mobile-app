@@ -9,10 +9,8 @@ import {
 } from "react-native";
 import { Colors, Strings, Icons } from "@/config";
 import { StatusBar } from "expo-status-bar";
-import ServiceSection from "../../components/service-section";
-import AppointmentCard, {
-  Appointment,
-} from "../../components/appointment-card";
+import ServiceSection from "@/components/service-section";
+import AppointmentCard, { Appointment } from "@/components/appointment-card";
 
 // Data Arrays
 const servicesData = {
@@ -207,7 +205,7 @@ const styles = StyleSheet.create({
     marginRight: 4,
   },
   reminderContainer: {
-    marginTop: 16,
+    marginBottom: 10,
   },
   reminderTitle: {
     color: Colors.gray,

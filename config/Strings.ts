@@ -2,6 +2,8 @@
 export const Strings = {
   general: {
     viewAll: "View All",
+    loading: "Loading...",
+    signingIn: "Signing In...",
   },
   navigation: {
     menu: "Menu",

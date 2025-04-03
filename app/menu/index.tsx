@@ -1,13 +1,11 @@
 import React from "react";
+import { StatusBar } from "expo-status-bar";
 import { View, ScrollView, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Colors, Strings, Icons } from "@/config";
-import Footer from "../../components/footer";
-import { StatusBar } from "expo-status-bar";
-import HorizontalMenuRow, {
-  MenuItem,
-} from "../../components/horizontal-menu-row";
-import ServicesGrid from "../../components/services-grid";
+import Footer from "@/components/footer";
+import HorizontalMenuRow, { MenuItem } from "@/components/horizontal-menu-row";
+import ServicesGrid from "@/components/services-grid";
 
 type FooterItem = {
   label: string;

@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
-import VirtualConsultationButton from "../../../components/virtual-consultation-button";
-import GroupServicesList from "../../../components/group-services-list";
+import VirtualConsultationButton from "@/components/virtual-consultation-button";
+import GroupServicesList from "@/components/group-services-list";
 import { Strings, Colors } from "@/config";
 
 const BookAppointmentScreen = () => {
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   groupServicesContainer: {
-    paddingHorizontal: 16
+    marginTop: 16,
   },
   headerTitle: {
     fontSize: 18,
@@ -57,7 +57,6 @@ const styles = StyleSheet.create({
   },
   separator: {
     height: 0.5,
-    marginTop: 16,
     marginBottom: 16,
     backgroundColor: Colors.black,
     width: "100%",

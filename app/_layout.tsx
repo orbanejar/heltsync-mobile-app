@@ -5,8 +5,8 @@ export const unstable_settings = {
 import React, { useState } from "react";
 import { Stack } from "expo-router";
 import { useNavigation } from "expo-router";
-import HeaderRight from "../components/header-right";
-import HeaderBackground from "../components/header-background-colored";
+import HeaderRight from "@/components/header-right";
+import HeaderBackground from "@/components/header-background-colored";
 import { StyleSheet, TouchableOpacity, Image } from "react-native";
 import { Strings, Colors, Icons } from "@/config";
 

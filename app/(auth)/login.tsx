@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -12,9 +12,22 @@ import {
 import { StatusBar } from "expo-status-bar";
 import { useAuth } from "../../context/auth-context";
 import { Colors, Strings, Icons } from "@/config";
+import Loading from "@/components/loading";
 
 export default function LoginScreen() {
   const { login } = useAuth();
+  const [loading, setLoading] = useState(false);
+
+  const handleSignIn = () => {
+    setLoading(true);
+
+    // Simulate the login delay for now...
+    setTimeout(() => {
+      login();
+      setLoading(false);
+    }, 2000);
+  };
+
   return (
     <KeyboardAvoidingView
       style={styles.container}
@@ -47,7 +60,7 @@ export default function LoginScreen() {
           />
         </View>
 
-        <TouchableOpacity style={styles.signInButton} onPress={login}>
+        <TouchableOpacity style={styles.signInButton} onPress={handleSignIn}>
           <Text style={styles.signInButtonText}>{Strings.auth.signin}</Text>
         </TouchableOpacity>
 
@@ -72,6 +85,8 @@ export default function LoginScreen() {
       <Text style={styles.footerText}>
         {Strings.auth.appVersion} 1.0.0 (001)
       </Text>
+
+      <Loading visible={loading} message={Strings.general.signingIn} />
     </KeyboardAvoidingView>
   );
 }
