@@ -3,15 +3,13 @@ export const unstable_settings = {
 };
 
 import React, { useState } from "react";
-import { Stack } from "expo-router";
-import { useNavigation } from "expo-router";
+import { Stack, useNavigation } from "expo-router";
 import HeaderRight from "@/components/header-right";
 import HeaderBackground from "@/components/header-background-colored";
 import { StyleSheet, TouchableOpacity, Image } from "react-native";
 import { Strings, Colors, Icons } from "@/config";
 
 import { AuthProvider } from "@/context/auth-context";
-import AuthContent from "@/components/authentication-content";
 
 const RootLayout = () => {
   const navigation = useNavigation();
@@ -19,9 +17,9 @@ const RootLayout = () => {
 
   return (
     <AuthProvider>
-      <AuthContent>
         <Stack>
           <Stack.Screen name="(main)" options={{ headerShown: false }} />
+          <Stack.Screen name="(auth)" options={{ headerShown: false }} />
           <Stack.Screen
             name="menu/index"
             options={{
@@ -162,7 +160,6 @@ const RootLayout = () => {
             }}
           />
         </Stack>
-      </AuthContent>
     </AuthProvider>
   );
 };

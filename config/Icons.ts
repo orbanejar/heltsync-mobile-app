@@ -43,8 +43,11 @@ export const Icons = {
     arrowForward: require("../assets/icons/others/arrow-forward.png"),
     calendarToday: require("../assets/icons/others/calendar-today.png"),
     backWithBorder: require("../assets/icons/others/back-with-border.png"),
+    forwardWithBorder: require("../assets/icons/others/forward-with-border.png"),
     person: require("../assets/icons/others/person.png"),
     lock: require("../assets/icons/others/lock.png"),
+    businessVerification: require("../assets/icons/others/business-verification.png"),
+    identityVerification: require("../assets/icons/others/identity-verification.png"),
   
     // Home - Services
     aestheticServicesHome: require("../assets/icons/services/aesthetic-services.png"),

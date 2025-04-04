@@ -9,23 +9,28 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from "react-native";
+import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { useAuth } from "../../context/auth-context";
 import { Colors, Strings, Icons } from "@/config";
 import Loading from "@/components/loading";
 
 export default function LoginScreen() {
+  const router = useRouter();
   const { login } = useAuth();
   const [loading, setLoading] = useState(false);
 
   const handleSignIn = () => {
     setLoading(true);
-
     // Simulate the login delay for now...
     setTimeout(() => {
       login();
       setLoading(false);
     }, 2000);
+  };
+
+  const handleAccountCreation = () => {
+    router.push("/account-creation");
   };
 
   return (
@@ -34,57 +39,62 @@ export default function LoginScreen() {
       behavior={Platform.OS === "ios" ? "padding" : "height"}
     >
       <StatusBar style="auto" />
-      <Image source={Icons.logoWithTagline} style={styles.logo} />
 
-      <View style={styles.card}>
-        <View style={styles.avatarContainer}>
-          <Image source={Icons.person} style={styles.avatarIcon} />
+      <View style={styles.content}>
+        <Image source={Icons.logoWithTagline} style={styles.logo} />
+
+        <View style={styles.card}>
+          <View style={styles.avatarContainer}>
+            <Image source={Icons.person} style={styles.avatarIcon} />
+          </View>
+
+          <View style={styles.inputWrapper}>
+            <Image source={Icons.person} style={styles.inputIcon} />
+            <TextInput
+              style={[styles.textInput, { flex: 1 }]}
+              placeholder={Strings.auth.username}
+              placeholderTextColor={Colors.gray}
+            />
+          </View>
+
+          <View style={styles.inputWrapper}>
+            <Image source={Icons.lock} style={styles.inputIcon} />
+            <TextInput
+              style={[styles.textInput, { flex: 1 }]}
+              placeholder={Strings.auth.password}
+              placeholderTextColor={Colors.gray}
+              secureTextEntry
+            />
+          </View>
+
+          <TouchableOpacity style={styles.signInButton} onPress={handleSignIn}>
+            <Text style={styles.signInButtonText}>{Strings.auth.signin}</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity>
+            <Text style={styles.forgotPasswordText}>
+              {Strings.auth.forgotPassword}
+            </Text>
+          </TouchableOpacity>
         </View>
 
-        <View style={styles.inputWrapper}>
-          <Image source={Icons.person} style={styles.inputIcon} />
-          <TextInput
-            style={[styles.textInput, { flex: 1 }]}
-            placeholder={Strings.auth.username}
-            placeholderTextColor={Colors.gray}
-          />
-        </View>
+        <Text style={styles.signUpInfo}>{Strings.auth.createAccountMessage}</Text>
 
-        <View style={styles.inputWrapper}>
-          <Image source={Icons.lock} style={styles.inputIcon} />
-          <TextInput
-            style={[styles.textInput, { flex: 1 }]}
-            placeholder={Strings.auth.password}
-            placeholderTextColor={Colors.gray}
-            secureTextEntry
-          />
-        </View>
-
-        <TouchableOpacity style={styles.signInButton} onPress={handleSignIn}>
-          <Text style={styles.signInButtonText}>{Strings.auth.signin}</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity>
-          <Text style={styles.forgotPasswordText}>
-            {Strings.auth.forgotPassword}
+        <TouchableOpacity onPress={handleAccountCreation}>
+          <Text style={styles.createAccountText}>
+            {Strings.auth.createAccount}
           </Text>
         </TouchableOpacity>
       </View>
 
-      <Text style={styles.signUpInfo}>{Strings.auth.createAccountMessage}</Text>
-
-      <TouchableOpacity>
-        <Text style={styles.createAccountText}>
-          {Strings.auth.createAccount}
+      <View style={styles.footer}>
+        <Text style={styles.footerText}>
+          {Strings.auth.allRightsReserved} {new Date().getFullYear()}
         </Text>
-      </TouchableOpacity>
-
-      <Text style={styles.footerText}>
-        {Strings.auth.allRightsReserved} 2025
-      </Text>
-      <Text style={styles.footerText}>
-        {Strings.auth.appVersion} 1.0.0 (001)
-      </Text>
+        <Text style={styles.footerText}>
+          {Strings.auth.appVersion} 1.0.0
+        </Text>
+      </View>
 
       <Loading visible={loading} message={Strings.general.signingIn} />
     </KeyboardAvoidingView>
@@ -95,9 +105,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
+    paddingHorizontal: 32,
+    position: "relative", // Enables absolute positioning for footer
+  },
+  content: {
+    flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    paddingHorizontal: 32,
+    paddingBottom: 80, // Extra padding so content doesn't overlap footer
   },
   logo: {
     width: 200,
@@ -176,13 +191,20 @@ const styles = StyleSheet.create({
   signUpInfo: {
     textAlign: "center",
     fontSize: 14,
-    color: Colors.gray || "#777",
+    color: Colors.gray,
     marginBottom: 8,
   },
   createAccountText: {
     fontSize: 16,
     color: Colors.brightSkyBlue,
     marginBottom: 30,
+  },
+  footer: {
+    position: "absolute",
+    bottom: 20,
+    left: 0,
+    right: 0,
+    alignItems: "center",
   },
   footerText: {
     fontSize: 12,

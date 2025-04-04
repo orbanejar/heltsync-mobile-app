@@ -11,8 +11,12 @@ export const Colors = {
 
   platinum: "#e9e9e9",
   whiteSmoke: "#fbfbfb",
+  offWhite: "#f7f7f7",
   brightSkyBlue: "#1ac2ea",
-  silverGray: "#c8c8c8"
+  silverGray: "#c8c8c8",
+
+  slateBlue: "#5c56ce",
+  green: "#00bf63",
 } as const;
 
 export type ColorType = keyof typeof Colors;
